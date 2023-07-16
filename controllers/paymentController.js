@@ -55,7 +55,7 @@ export const paymentVerification = catchAsyncError(async (req, res, next) => {
         razorpay_subscription_id,
     });
 
-    User.subscription.status = "active";
+    user.subscription.status = "active";
     await user.save();
 
     res.redirect(
